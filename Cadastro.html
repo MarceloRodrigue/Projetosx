@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html Lang="en"> 
+
+    
+
+  <style>
+
+
+
+h1 {
+    color: #DDA0DD;
+    text-decoration: underline;
+    text-transform: uppercase
+    
+    }
+    h2 {
+color: #3366FF;
+text-transform: none
+
+}
+p {
+
+line-height: 2px;
+text-align: center;
+font-size: 30px
+}
+
+
+  </style>
+
+
+
+<head>
+     
+     <meta charset="UTF-8">
+     
+
+     </meta>
+
+     <title>Cadastro</title>
+
+</head>
+<body>
+
+    <body style="background-color:rgba(100, 160, 142, 0.24)"></body>
+
+
+   <div>
+
+       <h1>Cadastro de candidatos à pilotos</h1>
+       <p>Força rebelde!!</p>
+       
+   </div>
+
+<form>
+
+      <fieldset>
+         <div>
+              <label>Nome:</label>
+              <input type="text" name="nome" id="nome"></input>
+
+        
+         </div>
+         <br>
+
+         <div>
+
+             <label>Planeta:</label>
+             <input type="text" name="Planeta" id= "Planeta"></input>
+
+
+         </div>
+         <br>
+
+          <div>
+
+             <label>Data de seu nascimento:</label>
+
+
+            
+
+             <input type="string" name="Data do seu nascimento"></input>
+
+             </div>
+             <br>
+
+
+             <div>
+
+         </fieldset>
+        
+
+ <h2>Descrição para entrar na aliança:</h2>
+          <textarea
+            rows="10" cols="50"></textarea>
+
+          </div>
+
+          <div id="divConteudo">
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Planeta</th>
+                        <th>Data de nascimento</th>
+                    </tr>
+                    <tr>
+                        <th><input type="text" id="txtColuna1"/></th>
+                        <th><input type="text" id="txtColuna2"/></th>
+                        <th><input type="string" id="stringColuna3"/></th>
+                    </tr>            
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Goku</td>
+                        <td>Vegeta</td>
+                        <td>16/08/736</td>
+                    </tr>
+                    <tr>
+                        <td>Boruto</td>
+                        <td>Terra</td>
+                        <td>10/10/2200</td>
+                    </tr>            
+                    <tr>
+                        <td>Sr.Miyagy</td>
+                        <td>Terra</td>
+                        <td>27/06/1932</td>
+                    </tr>
+                    <tr>
+                        <td>Kal-el</td>
+                        <td>Krypton</td>
+                        <td>29/02/1981</td>
+                    </tr>
+                    <tr>
+                        <td>Loki</td>
+                        <td>Jotunheim</td>
+                        <td>02/02/988</td>
+                    </tr>            
+                </tbody>
+            </table>
+
+        
+            
+    
+    
+
+
+
+</form>
+
+<script>
+
+$(function(){
+    $("#tabela input").keyup(function(){        
+        var index = $(this).parent().index();
+        var nth = "#tabela td:nth-child("+(index+1).toString()+")";
+        var valor = $(this).val().toUpperCase();
+        $("#tabela tbody tr").show();
+        $(nth).each(function(){
+            if($(this).text().toUpperCase().indexOf(valor) < 0){
+                $(this).parent().hide();
+            }
+        });
+    });
+ 
+    $("#tabela input").blur(function(){
+        $(this).val("");
+    }); 
+});
+
+</script>
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
